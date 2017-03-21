@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2ABFD84B1E7A242D00FA957B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABFD84A1E7A242D00FA957B /* main.cpp */; };
+		2ABFD8531E80BE7100FA957B /* EmojiLearner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABFD8511E80BE7100FA957B /* EmojiLearner.cpp */; };
+		2ABFD8561E80BE8B00FA957B /* EmojiRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ABFD8541E80BE8B00FA957B /* EmojiRecognizer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		2ABFD8471E7A242D00FA957B /* CvFaceDectection */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CvFaceDectection; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABFD84A1E7A242D00FA957B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2ABFD8511E80BE7100FA957B /* EmojiLearner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EmojiLearner.cpp; sourceTree = "<group>"; };
+		2ABFD8521E80BE7100FA957B /* EmojiLearner.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EmojiLearner.hpp; sourceTree = "<group>"; };
+		2ABFD8541E80BE8B00FA957B /* EmojiRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EmojiRecognizer.cpp; sourceTree = "<group>"; };
+		2ABFD8551E80BE8B00FA957B /* EmojiRecognizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EmojiRecognizer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				2ABFD84A1E7A242D00FA957B /* main.cpp */,
+				2ABFD8511E80BE7100FA957B /* EmojiLearner.cpp */,
+				2ABFD8521E80BE7100FA957B /* EmojiLearner.hpp */,
+				2ABFD8541E80BE8B00FA957B /* EmojiRecognizer.cpp */,
+				2ABFD8551E80BE8B00FA957B /* EmojiRecognizer.hpp */,
 			);
 			path = CvFaceDectection;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABFD8561E80BE8B00FA957B /* EmojiRecognizer.cpp in Sources */,
+				2ABFD8531E80BE7100FA957B /* EmojiLearner.cpp in Sources */,
 				2ABFD84B1E7A242D00FA957B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,7 +141,7 @@
 		2ABFD84C1E7A242D00FA957B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -166,9 +178,32 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lopencv_calib3d",
+					"-lopencv_features2d",
+					"-lopencv_core",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgcodecs",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_shape",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_video",
+					"-lopencv_videoio",
+					"-lopencv_videostab",
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -176,7 +211,7 @@
 		2ABFD84D1E7A242D00FA957B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -207,8 +242,31 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-lopencv_calib3d",
+					"-lopencv_features2d",
+					"-lopencv_core",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgcodecs",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_shape",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_video",
+					"-lopencv_videoio",
+					"-lopencv_videostab",
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
