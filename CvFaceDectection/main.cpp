@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     EmojiRecognizer emojiRecognizer = EmojiRecognizer();
     
     Mat face = imread("kzface.jpg", 1);
-    uchar emojiClass = 0;
+    int emojiClass = 1;
     emojiLearner.learn(face, emojiClass);
     
     emojiRecognizer.recognize(face);

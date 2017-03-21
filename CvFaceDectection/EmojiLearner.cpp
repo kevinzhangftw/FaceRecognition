@@ -8,7 +8,7 @@
 
 #include "EmojiLearner.hpp"
 
-bool EmojiLearner::learn(Mat face, uchar emoji){
+bool EmojiLearner::learn(Mat face, int emoji){
     bool learning;
     Mat grayFace;
     cvtColor(face, grayFace, CV_BGR2GRAY);

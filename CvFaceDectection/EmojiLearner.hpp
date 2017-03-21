@@ -24,9 +24,9 @@ using namespace cv::face;
 class EmojiLearner{
     // holds images and labels
     vector<Mat> images;
-    vector<uchar> labels;
+    vector<int> labels;
 public:
-    bool learn(Mat face, uchar emoji);
+    bool learn(Mat face, int emoji);
     
 };
 #endif /* EmojiLearner_hpp */
