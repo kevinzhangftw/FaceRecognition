@@ -25,6 +25,8 @@ class EmojiLearner{
     // holds images and labels
     vector<Mat> images;
     vector<int> labels;
+    Ptr<FaceRecognizer> model;
+    
 public:
     bool learn(Mat face, int emoji);
     

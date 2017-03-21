@@ -16,8 +16,16 @@ bool EmojiLearner::learn(Mat face, int emoji){
     images.push_back(grayFace);
     labels.push_back(emoji);
     
-    Ptr<FaceRecognizer> model =  createLBPHFaceRecognizer();
-    model->train(images, labels);
+    //is there xml?
+    //yes there is load it and update
+    //no xml then just train
+    
+    if (model == NULL) {
+        model =  createLBPHFaceRecognizer();
+        model->train(images, labels);
+    } else {
+        model->update(images, labels);
+    }
     
     model->save("EmojiModel");
     
