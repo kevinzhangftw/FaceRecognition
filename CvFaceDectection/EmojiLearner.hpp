@@ -11,15 +11,22 @@
 
 #include <stdio.h>
 #include <iostream>
+
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/core.hpp"
+#include "opencv2/face.hpp"
 
 using namespace cv;
+using namespace std;
+using namespace cv::face;
 
 class EmojiLearner{
-    
+    // holds images and labels
+    vector<Mat> images;
+    vector<uchar> labels;
 public:
-    bool learn(Mat face);
+    bool learn(Mat face, uchar emoji);
     
 };
 #endif /* EmojiLearner_hpp */

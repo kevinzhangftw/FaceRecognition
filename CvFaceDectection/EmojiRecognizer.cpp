@@ -10,5 +10,8 @@
 
 uchar EmojiRecognizer::recognize(Mat face){
     uchar emojiClass;
+    Mat grayFace;
+    cvtColor(face, grayFace, CV_BGR2GRAY);
+
     return emojiClass;
 }

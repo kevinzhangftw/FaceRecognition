@@ -8,8 +8,18 @@
 
 #include "EmojiLearner.hpp"
 
-bool EmojiLearner::learn(Mat face){
+bool EmojiLearner::learn(Mat face, uchar emoji){
     bool learning;
+    Mat grayFace;
+    cvtColor(face, grayFace, CV_BGR2GRAY);
+    //load set of images to be trained
+    images.push_back(grayFace);
+    labels.push_back(emoji);
+    
+    Ptr<FaceRecognizer> model =  createLBPHFaceRecognizer();
+    model->train(images, labels);
+    
+    model->save("EmojiModel");
     
     return learning;
 }

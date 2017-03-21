@@ -37,4 +37,7 @@ dependencies: \
   /usr/local/include/opencv2/imgproc/imgproc.hpp \
   /usr/local/include/opencv2/imgproc.hpp \
   /Users/kai/Desktop/CvFaceDectection/CvFaceDectection/EmojiLearner.hpp \
+  /usr/local/include/opencv2/face.hpp \
+  /usr/local/include/opencv2/face/predict_collector.hpp \
+  /usr/local/include/opencv2/face/facerec.hpp \
   /Users/kai/Desktop/CvFaceDectection/CvFaceDectection/EmojiRecognizer.hpp

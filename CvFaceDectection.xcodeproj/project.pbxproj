@@ -203,6 +203,7 @@
 					"-lopencv_video",
 					"-lopencv_videoio",
 					"-lopencv_videostab",
+					"-lopencv_face",
 				);
 				SDKROOT = macosx;
 			};
@@ -266,6 +267,7 @@
 					"-lopencv_video",
 					"-lopencv_videoio",
 					"-lopencv_videostab",
+					"-lopencv_face",
 				);
 				SDKROOT = macosx;
 			};
