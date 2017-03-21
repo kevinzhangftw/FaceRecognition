@@ -29,11 +29,13 @@ int main(int argc, const char * argv[]) {
     int emojiClass = 1;
     emojiLearner.learn(face, emojiClass);
     
-    emojiRecognizer.recognize(face);
+    int kzfaceis = emojiRecognizer.recognize(face);
     
-    imshow("source", face);
-    waitKey(0);
+    cout << "kzface class is "<< kzfaceis << endl;
     
+//    imshow("source", face);
+//    waitKey(0);
+//    
     
     return 0;
 }
