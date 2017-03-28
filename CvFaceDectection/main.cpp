@@ -26,17 +26,20 @@ int main(int argc, const char * argv[]) {
     EmojiRecognizer emojiRecognizer = EmojiRecognizer();
     
     Mat face = imread("kzface.jpg", 1);
+    Mat face2 = imread("kzface2.jpg", 1);
     Mat soulcastLogo = imread("soulcastLogo.png", 1);
+    Mat commonroom = imread("commonroom.jpg", 1);
+
+    
     int emojiClass = 1;
     int notEmojiClass = 0;
-    emojiLearner.learn(face, emojiClass);
-    emojiLearner.learn(soulcastLogo, notEmojiClass);
-    
+//    emojiLearner.learn(face, emojiClass);
+//    emojiLearner.learn(soulcastLogo, notEmojiClass);
+//    emojiLearner.learn(commonroom, notEmojiClass);
+//    
     int kzfaceis = emojiRecognizer.recognize(face);
     int soulcastLogois = emojiRecognizer.recognize(soulcastLogo);
-    Mat face2 = imread("kzface2.jpg", 1);
     int kzface2is = emojiRecognizer.recognize(face2);
-    Mat commonroom = imread("commonroom.jpg", 1);
     int commonroomis = emojiRecognizer.recognize(commonroom);
     
     cout << "kzface class is "<< kzfaceis << endl;
